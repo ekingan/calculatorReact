@@ -7,6 +7,10 @@ var NameField = React.createClass ({
 	onChange: function(event) {
 		this.setState({value: event.target.value});
 	},
+
+	clear: function(){
+		this.setState({value: ""});
+	},
 	render: function() {
 		return (
 			<input 
