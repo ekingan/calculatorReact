@@ -4,6 +4,7 @@ var NumberField = require('./NumberField.jsx');
 var ResultField = require('./ResultField.jsx');
 
 var LeadCapture = React.createClass ({
+
 	getInitialState: function() {
 		return {resultValue: ""}
 	},
@@ -21,6 +22,7 @@ var LeadCapture = React.createClass ({
 			let firstNum = parseFloat(this.refs.numberFieldOne.state.inputValue);
 			let secondNum = parseFloat(this.refs.numberFieldTwo.state.inputValue);
 			var result;
+			console.log(firstNum, secondNum);
 		
 		switch(operator) {
 			case "add":
@@ -43,7 +45,7 @@ var LeadCapture = React.createClass ({
 				break;
 
 		}
-			this.setState({calcValue: result.toString});
+			this.setState({calcValue: result.toString()});
 		}
 			
 	}, 
@@ -54,10 +56,10 @@ var LeadCapture = React.createClass ({
 				<div className="panel-body">
 					<div className="row">
 						<div className="col-sm-6">
-							<NumberField ref="numberFieldOne"/>
+							<NumberField ref="numberFieldOne" placeholder="enter a number"/>
 						</div>
 						<div className="col-sm-6">
-							<NumberField ref="numberFieldTwo" />
+							<NumberField ref="numberFieldTwo" placeholder="enter another number" />
 						</div>
 					</div>
 					<div className="row">

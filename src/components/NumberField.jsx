@@ -2,14 +2,15 @@ var React = require('react');
 var validator = require('validator');
 
 var NumberField = React.createClass ({
-	propTypes: {
+	  propTypes: {
     placeholder: React.PropTypes.string
   },
+
 	getInitialState: function() {
 		return {inputValue: "", valid: true};
 	},
 	onChange: function(e) {
-		let val = e.target.value
+		let val = e.target.value;
 		if (validator.isFloat(val) || val == "") {
 			this.setState({inputValue: val, valid: true})
 		} else {

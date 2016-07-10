@@ -21951,6 +21951,7 @@ var ResultField = require('./ResultField.jsx');
 var LeadCapture = React.createClass({
 	displayName: 'LeadCapture',
 
+
 	getInitialState: function () {
 		return { resultValue: "" };
 	},
@@ -21968,6 +21969,7 @@ var LeadCapture = React.createClass({
 			let firstNum = parseFloat(this.refs.numberFieldOne.state.inputValue);
 			let secondNum = parseFloat(this.refs.numberFieldTwo.state.inputValue);
 			var result;
+			console.log(firstNum, secondNum);
 
 			switch (operator) {
 				case "add":
@@ -21990,7 +21992,7 @@ var LeadCapture = React.createClass({
 					break;
 
 			}
-			this.setState({ calcValue: result.toString });
+			this.setState({ calcValue: result.toString() });
 		}
 	},
 
@@ -22007,12 +22009,12 @@ var LeadCapture = React.createClass({
 					React.createElement(
 						'div',
 						{ className: 'col-sm-6' },
-						React.createElement(NumberField, { ref: 'numberFieldOne' })
+						React.createElement(NumberField, { ref: 'numberFieldOne', placeholder: 'enter a number' })
 					),
 					React.createElement(
 						'div',
 						{ className: 'col-sm-6' },
-						React.createElement(NumberField, { ref: 'numberFieldTwo' })
+						React.createElement(NumberField, { ref: 'numberFieldTwo', placeholder: 'enter another number' })
 					)
 				),
 				React.createElement(
@@ -22100,6 +22102,7 @@ var NumberField = React.createClass({
 	propTypes: {
 		placeholder: React.PropTypes.string
 	},
+
 	getInitialState: function () {
 		return { inputValue: "", valid: true };
 	},
