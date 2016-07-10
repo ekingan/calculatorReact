@@ -21963,7 +21963,8 @@ var LeadCapture = React.createClass({
 	},
 
 	onCalc: function (operator) {
-		if (!this.numberFieldOne.state.valid || !this.numberFieldTwo.state.valid) {
+
+		if (!this.refs.numberFieldOne.state.valid || !this.refs.numberFieldTwo.state.valid) {
 			this.setState({ calcValue: "Cannot calculate, enter numbers only" });
 		} else {
 			let firstNum = parseFloat(this.refs.numberFieldOne.state.inputValue);
